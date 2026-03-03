@@ -23,8 +23,8 @@ En la Parte A de la práctica, se realiza el análisis de un sistema discreto de
 
 ###  Calculos de la señal 𝑦[𝑛] resultante de la convolución usando sumatorias a mano.
 <img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen1.png" />
-<img width="1900" height="827" alt="image" src="Imagen2.png" />
-<img width="1900" height="827" alt="image" src="Imagen3.png" />
+<img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen2.png" />
+<img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen3.png" />
 
 ###  PARTE B.
 
