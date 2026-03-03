@@ -29,6 +29,8 @@ En la Parte A de la práctica, se realiza el análisis de un sistema discreto de
 ### Señal 𝑦[𝑛] resultante de la convolución con Python.
 <img width="400" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Diagrama1.png" />
 
+### Codigo
+
 ###  PARTE B.
 
 ###  PARTE C.
