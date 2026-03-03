@@ -208,7 +208,7 @@ for metrica, valor in caracteristicas.items():
 ```
 
 
-#ANALISIS RESULTADOS
+# ANALISIS RESULTADOS
 ### Alcance y limitaciones de la convolución y la correlación en señales biomédicas
 
 La convolución y la correlación son herramientas fundamentales en el procesamiento de señales biomédicas. La convolución permite modelar la respuesta de sistemas y diseñar filtros digitales para reducir ruido o resaltar información relevante, como complejos QRS en un ECG. La correlación, por su parte, se utiliza para medir similitud entre señales, detectar patrones y estimar retardos temporales.
