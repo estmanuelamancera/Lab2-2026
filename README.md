@@ -26,10 +26,12 @@ En la Parte A de la práctica, se realiza el análisis de un sistema discreto de
 <img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen2.png" />
 <img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen3.png" />
 
-### Señal 𝑦[𝑛] resultante de la convolución con Python.
+## Señal 𝑦[𝑛] resultante de la convolución con Python.
 <img width="400" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Diagrama1.png" />
 
-### Codigo
+
+## CÓDIGO
+# Instalación de la librería wfdb
 
 ###  PARTE B.
 
