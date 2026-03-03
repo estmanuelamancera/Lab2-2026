@@ -60,6 +60,116 @@ Se calcula la señal de salida
 𝑦[𝑛]utilizando la función np.convolve(), que implementa la definición matemática de la convolución discreta:
 <img width="500" height="300" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen4.png" />
 
+# Creación del eje discreto
+```
+ # Eje correctamente enumerado
+    n_y = np.arange(0, len(y))
+```
+Se genera el eje horizontal de la gráfica, que representa los valores discretos de 𝑛 correspondientes a la señal de salida.
+
+# Impresión de resultados en consola
+```
+    # Mostrar secuencia
+    print(f"\n===== {nombre.upper()} =====")
+    print("h[n] =", h)
+    print("x[n] =", x)
+    print("y[n] =", y)
+```
+Se muestran en consola:
+La respuesta del sistema.
+La señal de entrada.
+La señal resultante de la convolución.
+Esto permite verificar numéricamente el resultado antes de graficarlo.
+
+# Creación de la figura
+```
+ # Crear figura
+    plt.figure(figsize=(10,6))
+```
+Se crea una ventana gráfica con un tamaño específico para visualizar correctamente la señal.
+
+# Gráfica tipo stem (señal discreta)
+```
+markerline, stemlines, baseline = plt.stem(n_y, y)
+```
+Se utiliza stem() porque la convolución es una señal discreta, no continua.Este tipo de gráfica representa cada muestra como un punto con una línea vertical.
+
+# Configuración visual
+```
+    # Líneas y puntos amarillo claro
+    plt.setp(stemlines, color="lightyellow")
+    plt.setp(markerline, marker='o',
+             markerfacecolor="lightyellow",
+             markeredgecolor="lightyellow")
+
+    # Quitar línea base roja
+    baseline.set_visible(False)
+
+    # Configurar ejes
+    ax = plt.gca()
+    ax.set_facecolor("skyblue")
+
+    # Bordes azul oscuro
+    for spine in ax.spines.values():
+        spine.set_color('darkblue')
+
+    # Números azul oscuro
+    ax.tick_params(axis='x', colors='darkblue')
+    ax.tick_params(axis='y', colors='darkblue')
+
+    # Forzar que aparezcan todas las muestras (0 a 15)
+    ax.set_xticks(np.arange(0, len(y), 1))
+    ax.set_xlim(0, len(y)-1)
+
+    plt.title(f"Convolución y[n] - {nombre}", fontsize=14, color="darkblue")
+    plt.xlabel("n", color="darkblue")
+    plt.ylabel("y[n]", color="darkblue")
+
+    plt.grid(True, color="white")
+```
+
+Se modifican:Colores de puntos y líneas,color del fondo,bordes del gráfico,valores mostrados en el eje x,título y etiquetas de los ejes.
+Esta sección no altera el cálculo matemático, únicamente mejora la visualización.
+
+# Mostrar la gráfica
+```
+ plt.show()
+```
+Se presenta la gráfica final en pantalla.
+
+# Definición de datos
+```
+# -------------------------------------------------
+# DATOS
+# -------------------------------------------------
+
+# Manuela
+h_manuela = [5,6,0,0,8,7,4]
+x_manuela = [1,0,1,4,1,8,7,8,6,7]
+
+# Tomas
+h_tomas = [5,6,0,0,8,8,0]
+x_tomas = [1,0,2,8,7,8,0,4,3,0]
+
+# Valentina
+h_valentina = [5,6,0,0,8,6,7]
+x_valentina = [1,0,0,7,4,6,7,4,6,7]
+```
+Se definen las secuencias:h[n]: sistema discreto y x[n]: señal de entrada.
+Se hace esto para tres estudiantes distintos.
+
+# Llamado de la función
+```
+# -------------------------------------------------
+# GRAFICAS
+# -------------------------------------------------
+
+graficar_convolucion("Manuela", h_manuela, x_manuela)
+graficar_convolucion("Tomas", h_tomas, x_tomas)
+graficar_convolucion("Valentina", h_valentina, x_valentina)
+```
+Se ejecuta la función para cada conjunto de datos, generando:El cálculo de la convolución,la impresión en consola y la gráfica correspondiente.
+
 ###  PARTE B.
 
 ###  PARTE C.
