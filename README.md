@@ -206,3 +206,17 @@ for metrica, valor in caracteristicas.items():
     print(f"{metrica:20}: {valor:.6f}")
 
 ```
+
+
+###  ANALISIS RESULTADOS
+# Alcance y limitaciones de la convolución y la correlación en señales biomédicas
+
+La convolución y la correlación son herramientas fundamentales en el procesamiento de señales biomédicas. La convolución permite modelar la respuesta de sistemas y diseñar filtros digitales para reducir ruido o resaltar información relevante, como complejos QRS en un ECG. La correlación, por su parte, se utiliza para medir similitud entre señales, detectar patrones y estimar retardos temporales.
+
+Sin embargo, presentan limitaciones. Ambas técnicas asumen condiciones ideales como linealidad o estabilidad temporal, que no siempre se cumplen en sistemas biológicos reales. Además, la presencia de ruido o artefactos puede afectar la precisión de los resultados, por lo que requieren un adecuado preprocesamiento de la señal.
+
+# Alcance y limitaciones de la Transformada de Fourier en tiempo real
+
+La Transformada de Fourier permite analizar el contenido frecuencial de una señal, identificar componentes dominantes y calcular su densidad espectral de potencia. Es ampliamente utilizada en señales biomédicas para estudiar ritmos fisiológicos y características espectrales.
+
+En aplicaciones en tiempo real, su principal limitación es que asume que la señal es estacionaria durante el intervalo de análisis. Además, existe un compromiso entre resolución temporal y resolución en frecuencia. Aunque la FFT reduce el tiempo de cálculo, en sistemas con recursos limitados puede generar restricciones de procesamiento o latencia.
