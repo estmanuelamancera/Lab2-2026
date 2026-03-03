@@ -170,6 +170,12 @@ graficar_convolucion("Valentina", h_valentina, x_valentina)
 ```
 Se ejecuta la función para cada conjunto de datos, generando:El cálculo de la convolución,la impresión en consola y la gráfica correspondiente.
 
+## Resultados convolucion
+<img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/C1.png" />
+<img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/C2.png" />
+<img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/C3.png" />
+
+
 ###  PARTE B.
 
 ###  PARTE C.
