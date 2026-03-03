@@ -58,7 +58,7 @@ x: señal de entrada (definida por los dígitos de la cédula).
 ```
 Se calcula la señal de salida 
 𝑦[𝑛]utilizando la función np.convolve(), que implementa la definición matemática de la convolución discreta:
-<img width="300" height="200" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen4.png" />
+<img width="500" height="300" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen4.png" />
 
 ###  PARTE B.
 
