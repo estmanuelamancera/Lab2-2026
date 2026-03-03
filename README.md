@@ -1,8 +1,19 @@
 ### INFORME DE LABORATORIO #2.
-Convolución, correlación y transformada de Fourier
+## convolución, correlación y transformada de Fourier
+
+### DESCRIPCIóN 
+La presente práctica de laboratorio tiene como objetivo aplicar y analizar herramientas fundamentales del Procesamiento Digital de Señales, específicamente la convolución, la correlación y la Transformada de Fourier.Durante la práctica, se realiza el cálculo manual y computacional de la convolución entre secuencias discretas, el análisis de la correlación cruzada como medida de similitud entre señales y la caracterización de una señal biológica.Asimismo, se emplean herramientas de programación para la visualización y análisis de resultados, fortaleciendo la relación entre los conceptos matemáticos y sus aplicaciones en ingeniería biomédica y procesamiento de señales reales.
 
 ### OBJETIVOS
-
+Objetivo General: Reconocer la importancia de la aplicación de herramientas 
+matemáticas como la convolución y correlación en el área de procesamiento de 
+señales. 
+Objetivos Específicos:
+Comprender la convolución como una operación que permite obtener la 
+respuesta de un sistema discreto ante una entrada determinada. 
+Analizar la correlación como medida de similitud entre dos señales. 
+Aplicar la Transformada de Fourier como herramienta de análisis en el 
+dominio de la frecuencia.
 
 
 ###  PARTE A.
