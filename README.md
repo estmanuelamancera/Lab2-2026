@@ -8,16 +8,17 @@ Durante la práctica, se realiza el cálculo manual y computacional de la convol
 Esta experiencia permite consolidar conceptos teóricos mediante su implementación práctica, evidenciando la importancia de estas técnicas en el análisis, filtrado y estudio de señales utilizadas en diferentes aplicaciones tecnológicas y biomédicas.
 
 ### OBJETIVOS
-1.Reconocer la importancia de la aplicación de herramientas matemáticas como la convolución y correlación en el área de procesamiento de señales. 
+1. Reconocer la importancia de la aplicación de herramientas matemáticas como la convolución y correlación en el área de procesamiento de señales. 
 
-2.Comprender la convolución como una operación que permite obtener la respuesta de un sistema discreto ante una entrada determinada. 
+2. Comprender la convolución como una operación que permite obtener la respuesta de un sistema discreto ante una entrada determinada. 
 
-3.Analizar la correlación como medida de similitud entre dos señales. 
+3. Analizar la correlación como medida de similitud entre dos señales. 
 
-4.Aplicar la Transformada de Fourier como herramienta de análisis en el dominio de la frecuencia.
+4. Aplicar la Transformada de Fourier como herramienta de análisis en el dominio de la frecuencia.
 
 
 ###  PARTE A.
+En la Parte A de la práctica, se realiza el análisis de un sistema discreto definido a partir de los dígitos del código del estudiante y una señal de entrada construida con los dígitos de su cédula. El objetivo es determinar la señal de salida mediante la operación de convolución. Para ello, primero se desarrolla el cálculo manual utilizando la definición por sumatoria, detallando el procedimiento paso a paso y obteniendo la secuencia resultante. Posteriormente, se elabora su representación gráfica y secuencial de forma manual. Finalmente, se implementa el mismo procedimiento en Python para validar los resultados obtenidos analíticamente y se genera la correspondiente representación gráfica computacional, permitiendo comparar ambos métodos y verificar la correcta aplicación de la convolución discreta.
 
 ###  PARTE B.
 
