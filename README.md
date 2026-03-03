@@ -40,6 +40,24 @@ En la Parte A de la práctica, se realiza el análisis de un sistema discreto de
 import numpy as np
 import matplotlib.pyplot as plt
 ```
+NumPy se utiliza para realizar operaciones matemáticas y trabajar con arreglos numéricos, especialmente para calcular la convolución y Matplotlib permite generar la representación gráfica de la señal resultante.
+
+# Definición de la función graficar_convolucion
+```
+def graficar_convolucion(nombre, h, x):
+```
+Se define una función que recibe:
+nombre: identificador del estudiante.
+h: respuesta del sistema (definida por los dígitos del código).
+x: señal de entrada (definida por los dígitos de la cédula).
+
+# Cálculo de la convolución
+```
+ # Convolucion
+    y = np.convolve(x, h)
+```
+Se calcula la señal de salida 
+𝑦[𝑛]utilizando la función np.convolve(), que implementa la definición matemática de la convolución discreta:
 
 ###  PARTE B.
 
