@@ -31,7 +31,15 @@ En la Parte A de la práctica, se realiza el análisis de un sistema discreto de
 
 
 ## CÓDIGO
-# Instalación de la librería wfdb
+# Importacion de librerias
+```
+# ============================================
+# PARTE A
+# ============================================
+
+import numpy as np
+import matplotlib.pyplot as plt
+```
 
 ###  PARTE B.
 
