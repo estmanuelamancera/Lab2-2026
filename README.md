@@ -22,6 +22,9 @@ Esta experiencia permite consolidar conceptos teóricos mediante su implementaci
 En la Parte A de la práctica, se realiza el análisis de un sistema discreto definido a partir de los dígitos del código del estudiante y una señal de entrada construida con los dígitos de su cédula. El objetivo es determinar la señal de salida mediante la operación de convolución. Para ello, primero se desarrolla el cálculo manual utilizando la definición por sumatoria, detallando el procedimiento paso a paso y obteniendo la secuencia resultante. Posteriormente, se elabora su representación gráfica y secuencial de forma manual. Finalmente, se implementa el mismo procedimiento en Python para validar los resultados obtenidos analíticamente y se genera la correspondiente representación gráfica computacional, permitiendo comparar ambos métodos y verificar la correcta aplicación de la convolución discreta.
 
 ###  Calculos de la señal 𝑦[𝑛] resultante de la convolución usando sumatorias a mano.
+<img width="2184" height="827" alt="image" src="Imagen1.png" />
+<img width="2184" height="827" alt="image" src="Imagen2.png" />
+<img width="2184" height="827" alt="image" src="Imagen3.png" />
 
 ###  PARTE B.
 
