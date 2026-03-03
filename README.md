@@ -1,5 +1,5 @@
 ### INFORME DE LABORATORIO #2.
-## CONVOLUCIÓN, CORRELACIÓN Y TRANSFORMADA DE FOURIER
+# CONVOLUCIÓN, CORRELACIÓN Y TRANSFORMADA DE FOURIER
 
 ### DESCRIPCIÓN 
 La presente práctica de laboratorio tiene como objetivo aplicar y analizar herramientas fundamentales del Procesamiento Digital de Señales, específicamente la convolución, la correlación y la Transformada de Fourier.
@@ -30,8 +30,8 @@ En la Parte A de la práctica, se realiza el análisis de un sistema discreto de
 <img width="400" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Diagrama1.png" />
 
 
-## CÓDIGO
-# Importacion de librerias
+# CÓDIGO
+## Importacion de librerias
 ```
 # ============================================
 # PARTE A
@@ -42,7 +42,7 @@ import matplotlib.pyplot as plt
 ```
 NumPy se utiliza para realizar operaciones matemáticas y trabajar con arreglos numéricos, especialmente para calcular la convolución y Matplotlib permite generar la representación gráfica de la señal resultante.
 
-# Definición de la función graficar_convolucion
+## Definición de la función graficar_convolucion
 ```
 def graficar_convolucion(nombre, h, x):
 ```
@@ -51,7 +51,7 @@ nombre: identificador del estudiante.
 h: respuesta del sistema (definida por los dígitos del código).
 x: señal de entrada (definida por los dígitos de la cédula).
 
-# Cálculo de la convolución
+## Cálculo de la convolución
 ```
  # Convolucion
     y = np.convolve(x, h)
@@ -60,14 +60,14 @@ Se calcula la señal de salida
 𝑦[𝑛]utilizando la función np.convolve(), que implementa la definición matemática de la convolución discreta:
 <img width="500" height="300" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen4.png" />
 
-# Creación del eje discreto
+## Creación del eje discreto
 ```
  # Eje correctamente enumerado
     n_y = np.arange(0, len(y))
 ```
 Se genera el eje horizontal de la gráfica, que representa los valores discretos de 𝑛 correspondientes a la señal de salida.
 
-# Impresión de resultados en consola
+## Impresión de resultados en consola
 ```
     # Mostrar secuencia
     print(f"\n===== {nombre.upper()} =====")
@@ -81,20 +81,20 @@ La señal de entrada.
 La señal resultante de la convolución.
 Esto permite verificar numéricamente el resultado antes de graficarlo.
 
-# Creación de la figura
+## Creación de la figura
 ```
  # Crear figura
     plt.figure(figsize=(10,6))
 ```
 Se crea una ventana gráfica con un tamaño específico para visualizar correctamente la señal.
 
-# Gráfica tipo stem (señal discreta)
+## Gráfica tipo stem (señal discreta)
 ```
 markerline, stemlines, baseline = plt.stem(n_y, y)
 ```
 Se utiliza stem() porque la convolución es una señal discreta, no continua.Este tipo de gráfica representa cada muestra como un punto con una línea vertical.
 
-# Configuración visual
+## Configuración visual
 ```
     # Líneas y puntos amarillo claro
     plt.setp(stemlines, color="lightyellow")
@@ -131,13 +131,13 @@ Se utiliza stem() porque la convolución es una señal discreta, no continua.Est
 Se modifican:Colores de puntos y líneas,color del fondo,bordes del gráfico,valores mostrados en el eje x,título y etiquetas de los ejes.
 Esta sección no altera el cálculo matemático, únicamente mejora la visualización.
 
-# Mostrar la gráfica
+## Mostrar la gráfica
 ```
  plt.show()
 ```
 Se presenta la gráfica final en pantalla.
 
-# Definición de datos
+## Definición de datos
 ```
 # -------------------------------------------------
 # DATOS
@@ -158,7 +158,7 @@ x_valentina = [1,0,0,7,4,6,7,4,6,7]
 Se definen las secuencias:h[n]: sistema discreto y x[n]: señal de entrada.
 Se hace esto para tres estudiantes distintos.
 
-# Llamado de la función
+## Llamado de la función
 ```
 # -------------------------------------------------
 # GRAFICAS
@@ -170,7 +170,7 @@ graficar_convolucion("Valentina", h_valentina, x_valentina)
 ```
 Se ejecuta la función para cada conjunto de datos, generando:El cálculo de la convolución,la impresión en consola y la gráfica correspondiente.
 
-## Resultados convolucion
+# Resultados convolucion
 <img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/C1.png" />
 <img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/C2.png" />
 <img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/C3.png" />
