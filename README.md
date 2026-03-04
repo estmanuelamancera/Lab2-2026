@@ -182,6 +182,39 @@ A partir de estas señales se calculó la correlación cruzada con el objetivo d
 Posteriormente, se realizo gráficamente la correlación en función del retardo 𝑘, lo que permitió identificar el comportamiento de la secuencia resultante y determinar el desplazamiento en el cual se presenta el máximo valor absoluto. Este análisis permitió evidenciar el desfase existente entre ambas señales.
 
 ![Infografía de periódico moderno ordenado colorido](https://github.com/user-attachments/assets/5a9dce4a-7957-4184-8d8d-7592ad436273)
+## CÓDIGO
+# Definición de parámetris del sistema y se construyen las señales 
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+# --------------------------------------------
+# Parametros
+# --------------------------------------------
+
+Ts = 1.25e-3          # 1.25 ms
+f = 100               # 100 Hz
+n = np.arange(0, 9)   # 0 ≤ n < 9
+
+# --------------------------------------------
+# Definicion de señales
+# --------------------------------------------
+
+x1 = np.cos(2*np.pi*f*n*Ts)
+x2 = np.sin(2*np.pi*f*n*Ts)
+
+print("x1[n] =", np.round(x1,4))
+print("x2[n] =", np.round(x2,4))
+```
+Posteriormente, se definen los parámetros del sistema, incluyendo el periodo de muestreo 𝑇𝑠=1.25 ms, la frecuencia de la señal 𝑓=100 Hz y el vector de índices discretos 𝑛, el cual contiene los valores en el rango 0≤ 𝑛 <9. Estos parámetros permiten establecer el dominio temporal discreto en el que se evaluarán las señales.
+A continuación, se construyen las señales discretas 𝑥1[𝑛] y 𝑥2[𝑛] utilizando las funciones trigonométricas coseno y seno, evaluadas como 
+cos (2𝜋𝑓𝑛𝑇𝑠) y sin(2𝜋𝑓𝑛𝑇𝑠), respectivamente. De esta manera, se obtiene la representación digital de ambas señales en función del tiempo discreto. Finalmente, se imprimen los valores de las muestras redondeadas, con el fin de verificar numéricamente los resultados obtenidos.
+
+
+
+
+
+
 
 
 ###  PARTE C.
