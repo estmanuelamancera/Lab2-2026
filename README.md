@@ -175,7 +175,6 @@ Se ejecuta la función para cada conjunto de datos, generando:El cálculo de la 
 <img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/C2.png" />
 <img width="600" height="827" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/C3.png" />
 
-
 ###  PARTE B.
 En esta parte de la práctica se definieron dos señales discretas periódicas: un coseno y un seno de frecuencia 100 Hz, muestreadas con un periodo de muestreo 𝑇𝑠 =1.25𝑚𝑠 para 0 ≤ 𝑛 < 9.
 A partir de estas señales se calculó la correlación cruzada con el objetivo de analizar el grado de similitud entre ambas en función del desplazamiento temporal. Por lo tanto, se empleó la definición discreta de correlación y se obtuvo la secuencia 𝑟[𝑘] para retardos comprendidos entre −(𝑁−1) y +(𝑁−1).
@@ -183,7 +182,7 @@ Posteriormente, se realizo gráficamente la correlación en función del retardo
 
 ![Infografía de periódico moderno ordenado colorido](https://github.com/user-attachments/assets/5a9dce4a-7957-4184-8d8d-7592ad436273)
 ## CÓDIGO
-# Definición de parámetris del sistema y se construyen las señales 
+# Definición de parámetros del sistema y se construyen las señales 
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -207,8 +206,81 @@ print("x1[n] =", np.round(x1,4))
 print("x2[n] =", np.round(x2,4))
 ```
 Posteriormente, se definen los parámetros del sistema, incluyendo el periodo de muestreo 𝑇𝑠=1.25 ms, la frecuencia de la señal 𝑓=100 Hz y el vector de índices discretos 𝑛, el cual contiene los valores en el rango 0≤ 𝑛 <9. Estos parámetros permiten establecer el dominio temporal discreto en el que se evaluarán las señales.
-A continuación, se construyen las señales discretas 𝑥1[𝑛] y 𝑥2[𝑛] utilizando las funciones trigonométricas coseno y seno, evaluadas como 
-cos (2𝜋𝑓𝑛𝑇𝑠) y sin(2𝜋𝑓𝑛𝑇𝑠), respectivamente. De esta manera, se obtiene la representación digital de ambas señales en función del tiempo discreto. Finalmente, se imprimen los valores de las muestras redondeadas, con el fin de verificar numéricamente los resultados obtenidos.
+A continuación, se construyen las señales discretas 𝑥1[𝑛] y 𝑥2[𝑛] utilizando las funciones trigonométricas coseno y seno, evaluadas como cos (2𝜋𝑓𝑛𝑇𝑠) y sin(2𝜋𝑓𝑛𝑇𝑠), respectivamente. De esta manera, se obtiene la representación digital de ambas señales en función del tiempo discreto. Finalmente, se imprimen los valores de las muestras redondeadas, con el fin de verificar numéricamente los resultados obtenidos.
+
+# Correlación cruzada
+En esta sección se buscó determinar el grado de similitud entre las señales 𝑥1[𝑛] y 𝑥2[𝑛] en función del desplazamiento temporal. Para ello, se utilizó la función np.correlate() en modo 'full', esto calculó la correlación cruzada completa, con el fin de evaluar cómo varía la coincidencia entre ambas señales cuando una de ellas se desplaza respecto a la otra.
+
+El objetivo principal fue identificar los valores de correlación asociados a cada retardo 𝑘, permitiendo posteriormente analizar en qué desplazamiento se presenta la máxima similitud y, por lo tanto, el desfase existente entre las señales.
+```
+# Correlacion cruzada
+
+r = np.correlate(x1, x2, mode='full')
+k = np.arange(-len(x1)+1, len(x1))
+
+print("\nRetardos k =", k)
+print("Correlacion r[k] =", np.round(r,4))
+```
+# Pico absoluto
+En esta sección se realizó la normalización de la correlación cruzada con el objetivo de escalar sus valores dentro del rango [−1,1]. Para ello, se dividió cada valor de la correlación 𝑟[𝑘] por el valor máximo absoluto de la misma.
+Este procedimiento permite obtener una medida relativa de similitud independiente de la amplitud de las señales originales, facilitando la comparación e interpretación del resultado. La correlación normalizada 𝑟 𝑛𝑜𝑟𝑚[𝑘] conserva la forma de la secuencia original, pero expresa el grado de similitud en términos proporcionales.
+
+# Visualización 
+En esta sección se grafica la correlación cruzada 𝑟[𝑘] utilizando una representación tipo stem, adecuada para señales discretas. Esto permite visualizar la distribución de los valores en función del retardo 𝑘 e identificar el punto de máxima similitud.
+
+Posteriormente, se presenta la correlación normalizada 𝑟 𝑛𝑜𝑟𝑚[𝑘], lo que facilita la interpretación de los resultados en una escala relativa. Ambas gráficas permiten validar visualmente el análisis realizado.
+```
+# Normalizacion
+r_norm = r / np.max(np.abs(r))
+
+print("\nCorrelacion normalizada =", np.round(r_norm,4))
+
+# Encontrar pico absoluto
+
+idx_peak = np.argmax(np.abs(r))
+lag_peak = k[idx_peak]
+valor_peak = r[idx_peak]
+
+print(f"\nPico absoluto en k = {lag_peak}")
+print(f"Valor del pico = {valor_peak:.4f}")
+```
+```
+# Grafica correlacion
+
+plt.figure(figsize=(10,6))
+markerline, stemlines, baseline = plt.stem(k, r)
+plt.setp(stemlines, color="darkblue")
+plt.setp(markerline, marker='o',
+         markerfacecolor="skyblue",
+         markeredgecolor="skyblue")
+baseline.set_visible(False)
+
+plt.title("Correlación cruzada entre x1[n] y x2[n]")
+plt.xlabel("Retardo k")
+plt.ylabel("r[k]")
+plt.grid(True)
+plt.show()
+
+# --------------------------------------------
+# Grafica correlacion normalizada
+# --------------------------------------------
+
+plt.figure(figsize=(10,6))
+plt.stem(k, r_norm)
+plt.title("Correlación cruzada normalizada")
+plt.xlabel("Retardo k")
+plt.ylabel("r_norm[k]")
+plt.grid(True)
+plt.show()
+```
+## Gráficas y resultados
+La función de correlación 𝑟[𝑘] permite medir la similitud entre 𝑥1[𝑛] y 𝑥2[𝑛] cuando una de ellas se desplaza en el tiempo. En los resultados obtenidos, el pico absoluto ocurre en 𝑘=2 con un valor de −3.5, lo que indica que el mayor grado de similitud entre ambas señales se presenta cuando una se desplaza dos muestras respecto a la otra. El signo negativo del pico muestra que las señales están invertidas en fase en ese punto, es decir, tienen la misma forma pero con signo opuesto. Además, la correlación normalizada alcanza un valor de −1, confirmando que la similitud en magnitud es máxima y que se trata de una coincidencia casi perfecta pero invertida.
+<img width="1466" height="434" alt="image" src="https://github.com/user-attachments/assets/afddda46-952e-4f6f-be91-8f9a94d2c21e" />
+
+Las gráficas muestran cómo varía el grado de coincidencia entre ambas señales a medida que se modifica el retardo. Se aprecia que existe un punto donde la magnitud de la correlación es máxima, lo que indica el desplazamiento en el cual las dos secuencias presentan mayor correspondencia estructural. La versión normalizada confirma que esa coincidencia alcanza el valor extremo permitido, evidenciando una relación lineal fuerte entre las señales en ese desplazamiento específico. En general, el comportamiento simétrico de la gráfica refleja la naturaleza periódica de las secuencias analizadas y cómo su alineación cambia progresivamente con el corrimiento.
+<img width="1392" height="883" alt="image" src="https://github.com/user-attachments/assets/6052dbab-1121-4ef8-9f7a-d830eca737cb" />
+
+<img width="1418" height="858" alt="image" src="https://github.com/user-attachments/assets/477729b7-1759-4b68-85cf-f1fc977fe2c4" />
 
 
 
