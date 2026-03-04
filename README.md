@@ -32,7 +32,7 @@ En la Parte A de la práctica, se realiza el análisis de un sistema discreto de
 
 # CÓDIGO
 ## Importacion de librerias
-```
+``` Python
 # ============================================
 # PARTE A
 # ============================================
@@ -43,7 +43,7 @@ import matplotlib.pyplot as plt
 NumPy se utiliza para realizar operaciones matemáticas y trabajar con arreglos numéricos, especialmente para calcular la convolución y Matplotlib permite generar la representación gráfica de la señal resultante.
 
 ## Definición de la función graficar_convolucion
-```
+``` Python
 def graficar_convolucion(nombre, h, x):
 ```
 Se define una función que recibe:
@@ -52,7 +52,7 @@ h: respuesta del sistema (definida por los dígitos del código).
 x: señal de entrada (definida por los dígitos de la cédula).
 
 ## Cálculo de la convolución
-```
+``` Python
  # Convolucion
     y = np.convolve(x, h)
 ```
@@ -61,14 +61,14 @@ Se calcula la señal de salida
 <img width="500" height="300" alt="image" src="https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/Imagen4.png" />
 
 ## Creación del eje discreto
-```
+``` Python
  # Eje correctamente enumerado
     n_y = np.arange(0, len(y))
 ```
 Se genera el eje horizontal de la gráfica, que representa los valores discretos de 𝑛 correspondientes a la señal de salida.
 
 ## Impresión de resultados en consola
-```
+``` Python
     # Mostrar secuencia
     print(f"\n===== {nombre.upper()} =====")
     print("h[n] =", h)
@@ -82,20 +82,20 @@ La señal resultante de la convolución.
 Esto permite verificar numéricamente el resultado antes de graficarlo.
 
 ## Creación de la figura
-```
+``` Python
  # Crear figura
     plt.figure(figsize=(10,6))
 ```
 Se crea una ventana gráfica con un tamaño específico para visualizar correctamente la señal.
 
 ## Gráfica tipo stem (señal discreta)
-```
+``` Python
 markerline, stemlines, baseline = plt.stem(n_y, y)
 ```
 Se utiliza stem() porque la convolución es una señal discreta, no continua.Este tipo de gráfica representa cada muestra como un punto con una línea vertical.
 
 ## Configuración visual
-```
+``` Python
     # Líneas y puntos amarillo claro
     plt.setp(stemlines, color="lightyellow")
     plt.setp(markerline, marker='o',
@@ -457,4 +457,4 @@ La correlación cruzada se diferencia de la convolución en que la correlación 
 ### REFERENCIAS 
 1. X. Zhi and S. Jiang, “Correlation and Convolution Image Filtering Application Analysis,” in Proceedings of the 7th International Conference on Education, Management, Information and Mechanical Engineering (EMIM 2017), Atlantis Press, Apr. 2017, pp. 162–166, doi: 10.2991/emim-17.2017.35 https://ww w.atlantis-press.com/proceedings/emim-17/25879248
 2. P. Hariharan, “The Fourier transform, convolution, and correlation,” in Optical Holography: Principles, Techniques and Applications, Cambridge University Press, 1996, pp. 317–322, doi: 10.1017/CBO9781139174039.021 https://www.cambridge.org/core/books/abs/optical-holography/fourier-transform-convolution-and-correlation/CA63F0D0772985806DEC0A9194367D01
-3. X. Zhi and A. Zhi, “Applied Research of Convolution and Correlation in Digital Image Processing,” in Proc. 2016 6th Int. Conf. Mechatronics, Computer and Education Informationization, Atlantis Press, 2016 https://www.atlantis-press.com/proceedings/mcei-16/25867650?utm_source=chatgpt.com
+3. X. Zhi and A. Zhi, “Applied Research of Convolution and Correlation in Digital Image Processing,” in Proc. 2016 6th Int. Conf. Mechatronics, Computer and Education Informationization, Atlantis Press, 2016 https://www.atlantis-press.com/proceedings/mcei-16/25867650?utm_source
