@@ -132,13 +132,13 @@ Se modifican:Colores de puntos y líneas,color del fondo,bordes del gráfico,val
 Esta sección no altera el cálculo matemático, únicamente mejora la visualización.
 
 ## Mostrar la gráfica
-```
+``` Python
  plt.show()
 ```
 Se presenta la gráfica final en pantalla.
 
 ## Definición de datos
-```
+``` Python
 # -------------------------------------------------
 # DATOS
 # -------------------------------------------------
@@ -159,7 +159,7 @@ Se definen las secuencias:h[n]: sistema discreto y x[n]: señal de entrada.
 Se hace esto para tres estudiantes distintos.
 
 ## Llamado de la función
-```
+``` Python
 # -------------------------------------------------
 # GRAFICAS
 # -------------------------------------------------
@@ -183,22 +183,17 @@ Posteriormente, se realizo gráficamente la correlación en función del retardo
 ![Infografía de periódico moderno ordenado colorido](https://github.com/user-attachments/assets/5a9dce4a-7957-4184-8d8d-7592ad436273)
 ## 1. CÓDIGO
 # Definición de parámetros del sistema y se construyen las señales 
-```
+``` Python
 import numpy as np
 import matplotlib.pyplot as plt
 
-# --------------------------------------------
 # Parametros
-# --------------------------------------------
 
 Ts = 1.25e-3          # 1.25 ms
 f = 100               # 100 Hz
 n = np.arange(0, 9)   # 0 ≤ n < 9
 
-# --------------------------------------------
 # Definicion de señales
-# --------------------------------------------
-
 x1 = np.cos(2*np.pi*f*n*Ts)
 x2 = np.sin(2*np.pi*f*n*Ts)
 
@@ -212,7 +207,7 @@ A continuación, se construyen las señales discretas 𝑥1[𝑛] y 𝑥2[𝑛] 
 En esta sección se buscó determinar el grado de similitud entre las señales 𝑥1[𝑛] y 𝑥2[𝑛] en función del desplazamiento temporal. Para ello, se utilizó la función np.correlate() en modo 'full', esto calculó la correlación cruzada completa, con el fin de evaluar cómo varía la coincidencia entre ambas señales cuando una de ellas se desplaza respecto a la otra.
 
 El objetivo principal fue identificar los valores de correlación asociados a cada retardo 𝑘, permitiendo posteriormente analizar en qué desplazamiento se presenta la máxima similitud y, por lo tanto, el desfase existente entre las señales.
-```
+``` Python
 # Correlacion cruzada
 
 r = np.correlate(x1, x2, mode='full')
@@ -224,12 +219,7 @@ print("Correlacion r[k] =", np.round(r,4))
 # Pico absoluto
 En esta sección se realizó la normalización de la correlación cruzada con el objetivo de escalar sus valores dentro del rango [−1,1]. Para ello, se dividió cada valor de la correlación 𝑟[𝑘] por el valor máximo absoluto de la misma.
 Este procedimiento permite obtener una medida relativa de similitud independiente de la amplitud de las señales originales, facilitando la comparación e interpretación del resultado. La correlación normalizada 𝑟 𝑛𝑜𝑟𝑚[𝑘] conserva la forma de la secuencia original, pero expresa el grado de similitud en términos proporcionales.
-
-# Visualización 
-En esta sección se grafica la correlación cruzada 𝑟[𝑘] utilizando una representación tipo stem, adecuada para señales discretas. Esto permite visualizar la distribución de los valores en función del retardo 𝑘 e identificar el punto de máxima similitud.
-
-Posteriormente, se presenta la correlación normalizada 𝑟 𝑛𝑜𝑟𝑚[𝑘], lo que facilita la interpretación de los resultados en una escala relativa. Ambas gráficas permiten validar visualmente el análisis realizado.
-```
+``` Python
 # Normalizacion
 r_norm = r / np.max(np.abs(r))
 
@@ -244,7 +234,12 @@ valor_peak = r[idx_peak]
 print(f"\nPico absoluto en k = {lag_peak}")
 print(f"Valor del pico = {valor_peak:.4f}")
 ```
-```
+# Visualización 
+En esta sección se grafica la correlación cruzada 𝑟[𝑘] utilizando una representación tipo stem, adecuada para señales discretas. Esto permite visualizar la distribución de los valores en función del retardo 𝑘 e identificar el punto de máxima similitud.
+
+Posteriormente, se presenta la correlación normalizada 𝑟 𝑛𝑜𝑟𝑚[𝑘], lo que facilita la interpretación de los resultados en una escala relativa. Ambas gráficas permiten validar visualmente el análisis realizado.
+
+```Python
 # Grafica correlacion
 
 plt.figure(figsize=(10,6))
