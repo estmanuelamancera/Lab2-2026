@@ -181,6 +181,9 @@ En esta parte de la práctica se definieron dos señales discretas periódicas: 
 A partir de estas señales se calculó la correlación cruzada con el objetivo de analizar el grado de similitud entre ambas en función del desplazamiento temporal. Por lo tanto, se empleó la definición discreta de correlación y se obtuvo la secuencia 𝑟[𝑘] para retardos comprendidos entre −(𝑁−1) y +(𝑁−1).
 Posteriormente, se realizo gráficamente la correlación en función del retardo 𝑘, lo que permitió identificar el comportamiento de la secuencia resultante y determinar el desplazamiento en el cual se presenta el máximo valor absoluto. Este análisis permitió evidenciar el desfase existente entre ambas señales.
 
+![Infografía de periódico moderno ordenado colorido](https://github.com/user-attachments/assets/5a9dce4a-7957-4184-8d8d-7592ad436273)
+
+
 ###  PARTE C.
 Análisis Espectral y Estadísticos de Frecuencia
 Esta sección transforma la señal al dominio de la frecuencia mediante la Transformada de Fourier para identificar sus componentes rítmicos. Se calcula la Densidad Espectral de Potencia (PSD) y se extraen métricas avanzadas (frecuencia media, mediana y desviación) para cuantificar la distribución energética y el comportamiento del espectro.
