@@ -390,6 +390,37 @@ plt.show()
 
 ![densidad espectral](https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/de.png?raw=true)
 
+#### Estadisticos en el dominio de la frecuencia 
+
+``` Python
+# Frecuencia media (ponderada por potencia)
+frecuencia_media = np.sum(fft_freq * psd) / np.sum(psd)
+
+# Frecuencia mediana
+psd_normalizada = psd / np.sum(psd)
+acumulada = np.cumsum(psd_normalizada)
+
+frecuencia_mediana = fft_freq[np.where(acumulada >= 0.5)[0][0]]
+
+# Desviación estándar espectral
+varianza = np.sum(((fft_freq - frecuencia_media)**2) * psd) / np.sum(psd)
+desviacion_std = np.sqrt(varianza)
+
+print("Frecuencia media:", frecuencia_media, "Hz")
+print("Frecuencia mediana:", frecuencia_mediana, "Hz")
+print("Desviación estándar:", desviacion_std, "Hz")
+
+plt.figure()
+plt.hist(fft_freq, bins=30, weights=psd)
+plt.title("Histograma de Frecuencias (ponderado por potencia)")
+plt.xlabel("Frecuencia (Hz)")
+plt.ylabel("Potencia acumulada")
+plt.grid()
+plt.show()
+
+
+``` 
+#### Resultados
 
 
 
