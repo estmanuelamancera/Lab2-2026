@@ -249,7 +249,7 @@ for metrica, valor in caracteristicas.items():
 La señal analizada corresponde a una señal EOG generada artificialmente mediante un generador de señales biológicas. Por lo tanto, puede clasificarse como determinística y periódica. Además, al encontrarse muestreada en un archivo digital para su análisis, corresponde a una señal discreta en el tiempo.
 
 ### SEÑAL
-[SEÑAL EOG](https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/image.png?raw=true)
+![SEÑAL EOG](https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/image.png?raw=true)
 
 # ANALISIS RESULTADOS
 ### Alcance y limitaciones de la convolución y la correlación en señales biomédicas
