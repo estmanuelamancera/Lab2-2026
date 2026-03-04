@@ -245,7 +245,11 @@ for metrica, valor in caracteristicas.items():
     print(f"{metrica:20}: {valor:.6f}")
 
 ```
+### Clasificación de la señal
+La señal analizada corresponde a una señal EOG generada artificialmente mediante un generador de señales biológicas. Por lo tanto, puede clasificarse como determinística y periódica. Además, al encontrarse muestreada en un archivo digital para su análisis, corresponde a una señal discreta en el tiempo.
 
+### SEÑAL
+[SEÑAL EOG]()
 
 # ANALISIS RESULTADOS
 ### Alcance y limitaciones de la convolución y la correlación en señales biomédicas
