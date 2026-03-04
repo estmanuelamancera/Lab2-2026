@@ -177,6 +177,9 @@ Se ejecuta la función para cada conjunto de datos, generando:El cálculo de la 
 
 
 ###  PARTE B.
+En esta parte de la práctica se definieron dos señales discretas periódicas: un coseno y un seno de frecuencia 100 Hz, muestreadas con un periodo de muestreo 𝑇𝑠 =1.25𝑚𝑠 para 0 ≤ 𝑛 < 9.
+A partir de estas señales se calculó la correlación cruzada con el objetivo de analizar el grado de similitud entre ambas en función del desplazamiento temporal. Por lo tanto, se empleó la definición discreta de correlación y se obtuvo la secuencia 𝑟[𝑘] para retardos comprendidos entre −(𝑁−1) y +(𝑁−1).
+Posteriormente, se realizo gráficamente la correlación en función del retardo 𝑘, lo que permitió identificar el comportamiento de la secuencia resultante y determinar el desplazamiento en el cual se presenta el máximo valor absoluto. Este análisis permitió evidenciar el desfase existente entre ambas señales.
 
 ###  PARTE C.
 Análisis Espectral y Estadísticos de Frecuencia
