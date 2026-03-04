@@ -181,7 +181,7 @@ A partir de estas señales se calculó la correlación cruzada con el objetivo d
 Posteriormente, se realizo gráficamente la correlación en función del retardo 𝑘, lo que permitió identificar el comportamiento de la secuencia resultante y determinar el desplazamiento en el cual se presenta el máximo valor absoluto. Este análisis permitió evidenciar el desfase existente entre ambas señales.
 
 ![Infografía de periódico moderno ordenado colorido](https://github.com/user-attachments/assets/5a9dce4a-7957-4184-8d8d-7592ad436273)
-## CÓDIGO
+## 1. CÓDIGO
 # Definición de parámetros del sistema y se construyen las señales 
 ```
 import numpy as np
@@ -273,8 +273,8 @@ plt.ylabel("r_norm[k]")
 plt.grid(True)
 plt.show()
 ```
-## Gráficas y resultados
-La función de correlación 𝑟[𝑘] permite medir la similitud entre 𝑥1[𝑛] y 𝑥2[𝑛] cuando una de ellas se desplaza en el tiempo. En los resultados obtenidos, el pico absoluto ocurre en 𝑘=2 con un valor de −3.5, lo que indica que el mayor grado de similitud entre ambas señales se presenta cuando una se desplaza dos muestras respecto a la otra. El signo negativo del pico muestra que las señales están invertidas en fase en ese punto, es decir, tienen la misma forma pero con signo opuesto. Además, la correlación normalizada alcanza un valor de −1, confirmando que la similitud en magnitud es máxima y que se trata de una coincidencia casi perfecta pero invertida.
+## 2.Gráficas y resultados
+La función de correlación 𝑟[𝑘] permite medir la similitud entre 𝑥1[𝑛] y 𝑥2[𝑛] cuando una de ellas se desplaza en el tiempo. En los resultados obtenidos, el pico absoluto ocurre en 𝑘=2 con un valor de −3.5, lo que indica que el mayor grado de similitud entre ambas señales se presenta cuando una se desplaza dos muestras respecto a la otra. El signo negativo del pico muestra que las señales están invertidas en fase en ese punto, es decir,cuando una alcanza valores positivos la otra tiende a valores negativos. Esto refleja el desfase existente entre el coseno y el seno. Además, la correlación normalizada alcanza un valor de −1, confirmando que la similitud en magnitud es máxima y que se trata de una coincidencia casi perfecta pero invertida.
 <img width="1466" height="434" alt="image" src="https://github.com/user-attachments/assets/afddda46-952e-4f6f-be91-8f9a94d2c21e" />
 
 Las gráficas muestran cómo varía el grado de coincidencia entre ambas señales a medida que se modifica el retardo. Se aprecia que existe un punto donde la magnitud de la correlación es máxima, lo que indica el desplazamiento en el cual las dos secuencias presentan mayor correspondencia estructural. La versión normalizada confirma que esa coincidencia alcanza el valor extremo permitido, evidenciando una relación lineal fuerte entre las señales en ese desplazamiento específico. En general, el comportamiento simétrico de la gráfica refleja la naturaleza periódica de las secuencias analizadas y cómo su alineación cambia progresivamente con el corrimiento.
@@ -282,7 +282,9 @@ Las gráficas muestran cómo varía el grado de coincidencia entre ambas señale
 
 <img width="1418" height="858" alt="image" src="https://github.com/user-attachments/assets/477729b7-1759-4b68-85cf-f1fc977fe2c4" />
 
-
+## 3. Pregunta 
+# ¿En que situación resulta útil aplicar la correlación cruzada en el procesamiento digital de señales?
+La correlación cruzada resulta útil en el procesamiento digital de señales cuando se requiere medir el grado de similitud entre dos señales y determinar el desplazamiento temporal existente entre ellas. Es especialmente aplicada en Detección de Señales (Signal Detection), Sincronización en Sistemas de Comunicaciones Digitales, Estimación de Retardo Temporal (Time Delay Estimation, TDE), Procesamiento de Radar y Sonar, Análisis de Eco en Sistemas Acústicos, así como en Procesamiento de Señales Biomédicas y Reconocimiento de Patrones (Pattern Recognition). En estos casos, la correlación cruzada permite identificar el punto donde las señales presentan mayor coincidencia, facilitando la extracción de información relevante.
 
 
 
