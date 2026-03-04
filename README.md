@@ -437,3 +437,10 @@ Sin embargo, presentan limitaciones. Ambas técnicas asumen condiciones ideales 
 La Transformada de Fourier permite analizar el contenido frecuencial de una señal, identificar componentes dominantes y calcular su densidad espectral de potencia. Es ampliamente utilizada en señales biomédicas para estudiar ritmos fisiológicos y características espectrales.
 
 En aplicaciones en tiempo real, su principal limitación es que asume que la señal es estacionaria durante el intervalo de análisis. Además, existe un compromiso entre resolución temporal y resolución en frecuencia. Aunque la FFT reduce el tiempo de cálculo, en sistemas con recursos limitados puede generar restricciones de procesamiento o latencia.
+
+### CONCLUSIÓN
+En esta práctica se aplicó la Transformada de Fourier y la densidad espectral de potencia para analizar una señal EOG en el dominio de la frecuencia. Estas herramientas permitieron identificar las componentes frecuenciales dominantes y la distribución de energía de la señal.
+
+El análisis espectral es fundamental en señales biomédicas, ya que posibles alteraciones en el contenido frecuencial pueden estar asociadas a patologías o a problemas en la adquisición, como ruido o interferencias. Por tanto, las técnicas aplicadas no solo permiten caracterizar matemáticamente la señal, sino también evaluar su calidad y apoyar procesos de diagnóstico
+
+
