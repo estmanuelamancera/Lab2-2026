@@ -384,7 +384,7 @@ plt.show()
 
 #### Transformada de la señal
 
-![TF]()
+![TF](https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/tf.png?raw=true)
 
 #### Densidad espectral de potencia
 
