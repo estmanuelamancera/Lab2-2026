@@ -325,6 +325,75 @@ for metrica, valor in caracteristicas.items():
 ### Clasificación de la señal
 La señal analizada corresponde a una señal EOG generada artificialmente mediante un generador de señales biológicas. Por lo tanto, puede clasificarse como determinística y periódica. Además, al encontrarse muestreada en un archivo digital para su análisis, corresponde a una señal discreta en el tiempo.
 
+### Transformada de Fourier
+
+
+##### Código
+``` Python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from google.colab import files
+
+# Subir archivo
+uploaded = files.upload()
+
+# Leer archivo (reemplaza con el nombre real si es necesario)
+df = pd.read_csv(list(uploaded.keys())[0])
+
+print("Columnas del archivo:")
+print(df.columns)
+
+# Extraer señal (ajusta nombres si es necesario)
+senal = df.iloc[:,1].values
+tiempo = df.iloc[:,0].values
+
+dt = np.mean(np.diff(tiempo))
+fs = 1/dt
+N = len(senal)
+
+senal = senal - np.mean(senal)
+
+fft_vals = np.fft.fft(senal)
+fft_freq = np.fft.fftfreq(N, dt)
+
+positivos = fft_freq >= 0
+fft_freq = fft_freq[positivos]
+fft_magnitud = np.abs(fft_vals[positivos]) / N
+
+plt.figure()
+plt.plot(fft_freq, fft_magnitud)
+plt.title("Transformada de Fourier")
+plt.xlabel("Frecuencia (Hz)")
+plt.ylabel("Magnitud")
+plt.grid()
+plt.show()
+
+psd = (1/(fs*N)) * np.abs(fft_vals)**2
+psd = psd[positivos]
+
+plt.figure()
+plt.plot(fft_freq, psd)
+plt.title("Densidad Espectral de Potencia")
+plt.xlabel("Frecuencia (Hz)")
+plt.ylabel("Potencia")
+plt.grid()
+plt.show()
+```
+
+
+#### Transformada de la señal
+
+![TF]()
+
+#### Densidad espectral de potencia
+
+![densidad espectral]()
+
+
+
+
+
 # ANALISIS RESULTADOS
 ### Alcance y limitaciones de la convolución y la correlación en señales biomédicas
 
