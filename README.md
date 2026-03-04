@@ -388,7 +388,7 @@ plt.show()
 
 #### Densidad espectral de potencia
 
-![densidad espectral]()
+![densidad espectral](https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/de.png?raw=true)
 
 
 
