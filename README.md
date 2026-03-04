@@ -423,7 +423,7 @@ plt.show()
 #### Resultados
 
 
-
+![rta](https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/rta.png?raw=true)
 
 # ANALISIS RESULTADOS
 ### Alcance y limitaciones de la convolución y la correlación en señales biomédicas
