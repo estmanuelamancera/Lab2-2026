@@ -292,7 +292,7 @@ Esta sección transforma la señal al dominio de la frecuencia mediante la Trans
 
 ### Diagrama de flujo
 
-![FLUJO C]()
+![FLUJO C](https://github.com/estmanuelamancera/Lab2-2026/blob/main/IMAGENES/diagrama%20flujo%20c.png?raw=true)
 
 ###  Caracterización de la señal.
 ``` Python
